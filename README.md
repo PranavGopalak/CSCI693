@@ -36,8 +36,3 @@ By empirically comparing open-source repositories with competitive programming s
 - Evaluate how the contest framing vs. software engineering context drives these choices.  
 
 ---
-
-## 4. Expected Contribution  
-- **For Education:** Provide evidence-based recommendations on which data structures deserve more or less emphasis in curricula, bridging the gap between academic preparation and industry practice.  
-- **For Practice:** Highlight the contexts where theoretically optimal structures may add unnecessary complexity, and where they genuinely provide real benefits.  
-- **For Research:** Contribute to the empirical understanding of how theory translates into practice across domains.  
