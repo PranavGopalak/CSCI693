@@ -1,21 +1,43 @@
 # CSCI693
 
-### 1. General Research Problem
+## 1. General Research Problem  
+There is a well-recognized gap between the teaching of theoretical computer science and the practice of software engineering. Coursework in algorithms and data structures often emphasizes asymptotic complexity, formal proofs, and advanced structures like AVL trees or Fibonacci heaps. In contrast, practicing developers frequently prioritize simplicity, maintainability, and the efficiency of “good enough” solutions, typically relying on standard library data structures such as hash maps and arrays.
 
-A well-documented gap exists between the study of theoretical computer science and the practice of software engineering. University algorithm courses often emphasize worst-case asymptotic complexity, mathematical proofs, and the implementation of highly specialized or complex data structures. In contrast, working software engineers often prioritize code simplicity, maintainability, and average-case performance on real-world data, frequently relying on a small set of "good enough" general-purpose tools provided by standard libraries.
+Competitive programming sits somewhere in between: it rewards mastery of algorithmic theory under artificial time constraints, yet does not necessarily reflect how engineers design systems in real projects. This raises a key question: **How do the choices of data structures differ between competitive programming environments and real-world software engineering?**
 
-This project seeks to bridge this gap by conducting a large-scale empirical analysis of public data. The goal is to move beyond anecdotal evidence and quantify how foundational algorithms and data structures are actually used "in the wild." By analyzing massive codebases, competitive programming solutions, and real-world network graphs, we can identify which theoretical concepts are most critical in practice and where common pitfalls lie. The ultimate aim is to provide data-driven insights that can inform both practical software development and computer science education.
+By empirically comparing open-source repositories with competitive programming submissions, this project seeks to shed light on the actual usage of data structures across these contexts. The results can inform both CS education and professional practice by identifying which structures matter most in each domain.
 
-### 2. Primary Research Questions
+---
 
-This study will address three primary research questions, each targeting a different facet of the theory-vs-practice divide:
+## 2. Primary Research Question  
+**RQ1:** How does the usage of data structures in real-world software projects (e.g., GitHub repositories) differ from their usage in competitive programming contests?  
 
-* **RQ1: Data Structures in Practice:** In practice, how often are theoretically efficient but complex data structures (e.g., AVL trees, Fibonacci heaps) actually implemented or used in popular open-source projects versus their simpler, general-purpose counterparts (e.g., hash maps, dynamic arrays)?
+**Sub-questions include:**  
+- Which “advanced” structures (e.g., balanced trees, priority queues, union-find) appear in competitive programming but are rarely found in real-world projects?  
+- Conversely, which “simple” or library-provided structures (e.g., hash maps, arrays, vectors) dominate in real projects but may be under-represented in contests?  
+- What factors (e.g., time pressure, problem framing, ecosystem libraries) might explain these differences?
 
-* **RQ2: Algorithmic Problem-Solving:** By analyzing solutions to competitive programming problems, can we identify common logical errors or sub-optimal algorithmic approaches that contestants frequently make on problems related to specific domains like dynamic programming or graph theory?
+---
 
-* **RQ3: Graph Structures in the Wild:** What is the real-world distribution of graph structures? By analyzing networks like social media connections or software dependency graphs, are they more likely to be scale-free, small-world, or another topology, and what does this imply for practical algorithm choice?
+## 3. Methodology & Data Sources  
 
-### 3. Methodology & Data Sources
+### Data Sources  
+- **Competitive Programming Submissions:** Publicly available datasets from platforms like Codeforces, AtCoder, or Kattis.  
+- **Real-World Software Projects:** Open-source repositories on GitHub, filtered to ensure relevance and quality (e.g., belonging to known organizations such as Mozilla, Google, Microsoft, or exceeding thresholds for stars/forks).
 
-This research will be conducted by analyzing three distinct, publicly available datasets, with a specific methodology for each research question.
+### Data Collection & Processing  
+- **Language Filtering:** Focus on a small set of common languages (e.g., C++, Java, Python) to reduce complexity of parsing.  
+- **Data Structure Detection:** Use static code analysis and keyword heuristics (e.g., identifying usage of `std::map` vs. `std::unordered_map` in C++) to classify data structure usage.  
+- **Normalization:** Adjust for project size and submission length to make usage comparable.  
+
+### Analysis  
+- Compare frequencies of different data structures across the two domains.  
+- Identify patterns of “theory-heavy” structures (heaps, balanced trees) vs. “practical” structures (hash maps, arrays).  
+- Evaluate how the contest framing vs. software engineering context drives these choices.  
+
+---
+
+## 4. Expected Contribution  
+- **For Education:** Provide evidence-based recommendations on which data structures deserve more or less emphasis in curricula, bridging the gap between academic preparation and industry practice.  
+- **For Practice:** Highlight the contexts where theoretically optimal structures may add unnecessary complexity, and where they genuinely provide real benefits.  
+- **For Research:** Contribute to the empirical understanding of how theory translates into practice across domains.  
